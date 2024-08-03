@@ -1,6 +1,5 @@
 package net.baffledbanana87.repurposedend.entity.custom;
 
-import net.baffledbanana87.repurposedend.entity.client.CryingSkeletonModel;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.PathNodeType;
@@ -18,7 +17,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -26,23 +24,9 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 
-public class CryingSkeletonEntity extends HostileEntity {
-    private final MeleeAttackGoal meleeAttackGoal = new MeleeAttackGoal(this, 1f, false) {
-        @Override
-        public void stop() {
-            super.stop();
-            CryingSkeletonEntity.this.setAttacking(false);
-        }
+public class CryingSkeletonEntity extends WitherSkeletonEntity {
 
-        @Override
-        public void start() {
-            super.start();
-            CryingSkeletonEntity.this.setAttacking(true);
-        }
-    };
-
-
-    public CryingSkeletonEntity(EntityType<? extends HostileEntity> entityType, World world) {
+    public CryingSkeletonEntity(EntityType<? extends WitherSkeletonEntity> entityType, World world) {
         super(entityType, world);
         this.updateAttackType();
         this.setPathfindingPenalty(PathNodeType.LAVA, 8.0F);
@@ -80,7 +64,7 @@ public class CryingSkeletonEntity extends HostileEntity {
 
     @Override
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
-        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
     }
 
 
@@ -115,12 +99,6 @@ public class CryingSkeletonEntity extends HostileEntity {
         }
     }
 
-    public void updateAttackType() {
-        if (this.getWorld() != null && !this.getWorld().isClient) {
-            this.goalSelector.remove(this.meleeAttackGoal);
-            this.goalSelector.add(4, this.meleeAttackGoal);
-        }
-    }
 
 
     @Override
