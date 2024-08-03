@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "repurposed-end",
+	"version": "${version}",
+	"name": "Repurposed End",
+	"description": "I have made some changes to the end adding in new enemies and a set of armour and tools",
+	"authors": [
+		"BaffledBanana87"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/repurposed-end/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.baffledbanana87.repurposedend.RepurposedEnd"
+		],
+		"client": [
+			"net.baffledbanana87.repurposedend.RepurposedEndClient"
+		],
+		"fabric-datagen": [
+			"net.baffledbanana87.repurposedend.RepurposedEndDataGenerator"
+		]
+	},
+	"mixins": [
+		"repurposed-end.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
