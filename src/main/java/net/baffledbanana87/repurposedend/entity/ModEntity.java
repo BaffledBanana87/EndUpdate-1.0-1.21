@@ -2,7 +2,8 @@ package net.baffledbanana87.repurposedend.entity;
 
 import net.baffledbanana87.repurposedend.RepurposedEnd;
 import net.baffledbanana87.repurposedend.entity.custom.CryingSkeletonEntity;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -16,7 +17,20 @@ public class ModEntity {
     public static final EntityType<CryingSkeletonEntity> CRYING_SKELETON = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(RepurposedEnd.MOD_ID,
             "cryingskeleton"),
-            EntityType.Builder.create(CryingSkeletonEntity::new,SpawnGroup.MONSTER).dimensions(0.6f,2.4f).build());
+            EntityType.Builder.create(CryingSkeletonEntity::new,SpawnGroup.MONSTER)
+                    .makeFireImmune()
+                    .dimensions(0.6f,2.4f)
+                    .build()
+    );
 
-
+    public static void registerEntitySpawns() {
+        BiomeModifications.addSpawn(
+                BiomeSelectors.foundInTheEnd(),
+                SpawnGroup.MONSTER,
+                CRYING_SKELETON,
+                100,
+                4,
+                9
+        );
+    }
 }

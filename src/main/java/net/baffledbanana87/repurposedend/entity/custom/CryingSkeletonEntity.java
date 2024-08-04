@@ -5,7 +5,6 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.*;
@@ -15,12 +14,8 @@ import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -28,7 +23,6 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
 
     public CryingSkeletonEntity(EntityType<? extends WitherSkeletonEntity> entityType, World world) {
         super(entityType, world);
-        this.updateAttackType();
         this.setPathfindingPenalty(PathNodeType.LAVA, 8.0F);
     }
 
@@ -46,32 +40,16 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
        this.targetSelector.add(3, new ActiveTargetGoal<>(this, AbstractPiglinEntity.class, true));
     }
 
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_WITHER_SKELETON_AMBIENT;
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_WITHER_SKELETON_HURT;
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_WITHER_SKELETON_DEATH;
-    }
-
 
     @Override
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
-        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
     }
-
 
 
     public static DefaultAttributeContainer.Builder createCryingSkeletonAttributes(){
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 15f)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 35f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0f);
 
@@ -110,7 +88,8 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
     }
 
     @Override
-    protected void updateEnchantments(ServerWorldAccess world, Random random, LocalDifficulty localDifficulty) {
+    public boolean canSpawn(WorldView world) {
+        return super.canSpawn(world);
     }
-
 }
+
