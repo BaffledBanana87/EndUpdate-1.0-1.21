@@ -28,7 +28,7 @@ public class ModEntity {
                 BiomeSelectors.foundInTheEnd(),
                 SpawnGroup.MONSTER,
                 CRYING_SKELETON,
-                10,
+                5,
                 1,
                 1
         );

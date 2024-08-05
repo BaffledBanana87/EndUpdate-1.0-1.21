@@ -47,7 +47,7 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
     @Override
     protected void dropEquipment(ServerWorld world, DamageSource source, boolean causedByPlayer) {
         super.dropEquipment(world, source, causedByPlayer);
-        int cryingObsidianCount = random.nextInt(2) + 1;
+        int cryingObsidianCount = random.nextInt(2);
         this.dropStack(new ItemStack(Items.CRYING_OBSIDIAN, cryingObsidianCount));
 
 
@@ -76,7 +76,7 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
 
     public static DefaultAttributeContainer.Builder createCryingSkeletonAttributes(){
         return CryingSkeletonEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 50f)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0f);
 
