@@ -2,6 +2,7 @@ package net.baffledbanana87.repurposedend.entity;
 
 import net.baffledbanana87.repurposedend.RepurposedEnd;
 import net.baffledbanana87.repurposedend.entity.custom.CryingSkeletonEntity;
+import net.baffledbanana87.repurposedend.entity.custom.EnderSkeletonEntity;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.entity.EntityType;
@@ -23,6 +24,13 @@ public class ModEntity {
                     .build()
     );
 
+    public static final EntityType<EnderSkeletonEntity> ENDER_SKELETON = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(RepurposedEnd.MOD_ID,"enderskeleton"),
+            EntityType.Builder.create(EnderSkeletonEntity::new,SpawnGroup.MONSTER)
+                    .dimensions(0.6f,2.4f)
+                    .build()
+    );
+
     public static void registerEntitySpawns() {
         BiomeModifications.addSpawn(
                 BiomeSelectors.foundInTheEnd(),
@@ -33,4 +41,16 @@ public class ModEntity {
                 1
         );
     }
+
+    public static void registerEnderSkeletonSpawns() {
+        BiomeModifications.addSpawn(
+                BiomeSelectors.foundInTheEnd(),
+                SpawnGroup.MONSTER,
+                ENDER_SKELETON,
+                5,
+                1,
+                1
+        );
+    }
+
 }

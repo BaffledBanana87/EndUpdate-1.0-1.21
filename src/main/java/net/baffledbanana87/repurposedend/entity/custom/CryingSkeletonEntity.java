@@ -118,5 +118,6 @@ public class CryingSkeletonEntity extends WitherSkeletonEntity {
     public boolean canSpawn(WorldView world) {
         return super.canSpawn(world);
     }
+
 }
 

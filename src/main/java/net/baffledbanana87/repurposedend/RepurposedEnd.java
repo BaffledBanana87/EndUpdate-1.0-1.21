@@ -2,6 +2,7 @@ package net.baffledbanana87.repurposedend;
 
 import net.baffledbanana87.repurposedend.entity.ModEntity;
 import net.baffledbanana87.repurposedend.entity.custom.CryingSkeletonEntity;
+import net.baffledbanana87.repurposedend.entity.custom.EnderSkeletonEntity;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -20,8 +21,11 @@ public class RepurposedEnd implements ModInitializer {
 	public void onInitialize() {
 
 		ModEntity.registerEntitySpawns();
+		ModEntity.registerEnderSkeletonSpawns();
 		SpawnRestriction.register(ModEntity.CRYING_SKELETON, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
+		SpawnRestriction.register(ModEntity.ENDER_SKELETON, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnInDark);
 		FabricDefaultAttributeRegistry.register(ModEntity.CRYING_SKELETON, CryingSkeletonEntity.createCryingSkeletonAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntity.ENDER_SKELETON, EnderSkeletonEntity.createEnderSkeletonAttributes());
 
 	}
 }
