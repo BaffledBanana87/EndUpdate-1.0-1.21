@@ -1,3 +1,12 @@
 {
-  "entity.repurposedend.cryingskeleton": "Crying Skeleton"
+  "entity.repurposedend.cryingskeleton": "Crying Skeleton",
+  "entity.repurposedend.enderskeleton" : "Ender Skeleton",
+  "item.repurposedend.dragon_scale" : "Dragon Scale",
+  "item.repurposedend.mini_scale" : "Mini Scale",
+  "block.repurposedend.dragon_scale_block": "Block of Scale",
+  "item.repurposedend.dragon_scale_boots": "Dragon Scale Boots",
+  "item.repurposedend.dragon_scale_chestplate": "Dragon Scale Chestplate",
+  "item.repurposedend.dragon_scale_leggings": "Dragon Scale Leggings",
+  "item.repurposedend.dragon_scale_helmets": "Dragon Scale Helmet"
+
 }

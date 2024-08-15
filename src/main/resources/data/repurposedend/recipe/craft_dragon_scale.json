@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:ender_eye"
+    },
+    "X": {
+      "item": "repurposedend:mini_scale"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X##",
+    "## "
+  ],
+  "result": {
+    "id": "repurposedend:dragon_scale"
+  }
+}
