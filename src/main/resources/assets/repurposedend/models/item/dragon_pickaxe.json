@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "repurposedend:item/dragon_pickaxe"
+  }
+}

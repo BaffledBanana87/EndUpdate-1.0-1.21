@@ -4,7 +4,6 @@ import net.baffledbanana87.repurposedend.RepurposedEnd;
 import net.baffledbanana87.repurposedend.item.ModItems;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -20,16 +19,16 @@ public class ArmorMaterialInit {
 
 
     public static final RegistryEntry<ArmorMaterial> DRAGON_SCALE = register("dragon_scale", Map.of(
-                    ArmorItem.Type.HELMET, 3,
-                    ArmorItem.Type.CHESTPLATE, 8,
-                    ArmorItem.Type.LEGGINGS, 6,
-                    ArmorItem.Type.BOOTS, 3
+                    ArmorItem.Type.HELMET, 4,
+                    ArmorItem.Type.CHESTPLATE, 9,
+                    ArmorItem.Type.LEGGINGS, 7,
+                    ArmorItem.Type.BOOTS, 4
             ),
             15,
-            SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.ofItems(ModItems.DRAGON_SCALE),
-            0.5F,
-            0.1F,
+            4F,
+            0.2F,
             false);
 
 

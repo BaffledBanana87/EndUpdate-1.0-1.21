@@ -11,6 +11,6 @@
     "id": "repurposedend:dragon_scale_leggings"
   },
   "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
+    "item": "repurposedend:dragon_upgrade_smithing_template"
   }
 }

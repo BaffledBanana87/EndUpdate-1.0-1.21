@@ -4,11 +4,11 @@
     "item": "repurposedend:dragon_scale"
   },
   "base": {
-    "item": "minecraft:netherite_helmet"
+    "item": "minecraft:netherite_shovel"
   },
   "result": {
     "count": 1,
-    "id": "repurposedend:dragon_scale_helmets"
+    "id": "repurposedend:dragon_shovel"
   },
   "template": {
     "item": "repurposedend:dragon_upgrade_smithing_template"

@@ -25,6 +25,7 @@ import net.minecraft.potion.Potions;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -55,6 +56,7 @@ public class EnderSkeletonEntity extends WitherSkeletonEntity{
         this.targetSelector.add(3, new ActiveTargetGoal<>(this, TurtleEntity.class, 10, true, false, TurtleEntity.BABY_TURTLE_ON_LAND_FILTER));
         this.targetSelector.add(3, new ActiveTargetGoal<>(this, AbstractPiglinEntity.class, true));
     }
+
 
     @Override
     protected void dropEquipment(ServerWorld world, DamageSource source, boolean causedByPlayer) {
@@ -198,7 +200,8 @@ public class EnderSkeletonEntity extends WitherSkeletonEntity{
     public boolean damage(DamageSource source, float amount) {
         if (this.isInvulnerableTo(source)) {
             return false;
-        } else {
+        }
+        else {
             boolean bl = source.getSource() instanceof PotionEntity;
             if (!bl && !source.isIn(DamageTypeTags.IS_PROJECTILE)) {
                 boolean bl2 = super.damage(source, amount);
@@ -220,6 +223,12 @@ public class EnderSkeletonEntity extends WitherSkeletonEntity{
         }
     }
 
+
+    @Override
+    public void takeKnockback(double strength, double x, double z) {
+        this.teleportRandomly();
+        super.takeKnockback(strength, x, z);
+    }
 }
 
 

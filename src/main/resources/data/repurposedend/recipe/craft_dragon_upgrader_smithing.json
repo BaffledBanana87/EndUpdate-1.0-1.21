@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "X": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "F": {
+      "item": "minecraft:end_crystal"
+    }
+  },
+  "pattern": [
+    "#F#",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "id": "repurposedend:dragon_upgrade_smithing_template"
+  }
+}
