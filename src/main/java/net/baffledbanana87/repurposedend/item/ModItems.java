@@ -20,6 +20,7 @@ public class ModItems {
 
     public static final Item DRAGON_SCALE = registerItem("dragon_scale", new Item(new Item.Settings()));
     public static final Item MINI_SCALE = registerItem("mini_scale", new Item(new Item.Settings()));
+    public static final Item DRAGON_UPGRADER = registerItem("dragon_upgrade_smithing_template", new Item(new Item.Settings()));
 
     public static final Item DRAGON_SCALE_BOOTS = registerItem("dragon_scale_boots", new ArmorItem(ArmorMaterialInit.DRAGON_SCALE,
             ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
@@ -34,6 +35,7 @@ public class ModItems {
     private static void addItemsToMaterialsItemGroup(FabricItemGroupEntries entries){
         entries.add(MINI_SCALE);
         entries.add(DRAGON_SCALE);
+        entries.add(DRAGON_UPGRADER);
     }
 
     private  static void addItemsToBlockGroup(FabricItemGroupEntries entries){
