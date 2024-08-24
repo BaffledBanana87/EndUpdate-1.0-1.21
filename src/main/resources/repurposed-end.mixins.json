@@ -3,7 +3,8 @@
 	"package": "net.baffledbanana87.repurposedend.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"SkullBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

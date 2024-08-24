@@ -16,6 +16,7 @@ public class EnderDragonDrop{
     private static final Identifier DRAGON_ID =
             Identifier.of("minecraft","entities/ender_dragon");
 
+
     public static void modifyLootTables(){
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
 
@@ -28,8 +29,9 @@ public class EnderDragonDrop{
                 tableBuilder.pool(poolBuilder.build());
             }
 
-
         });
+
+
     }
 
 }

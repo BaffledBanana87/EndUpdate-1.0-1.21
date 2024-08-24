@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "repurposedend:wither_enchantment"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 0
+        }
+      ]
+    }
+  ]
+}

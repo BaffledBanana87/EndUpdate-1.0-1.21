@@ -13,5 +13,16 @@
   "item.repurposedend.dragon_pickaxe": "Dragon Scale Pickaxe",
   "item.repurposedend.dragon_hoe": "Dragon Scale Hoe",
   "item.repurposedend.dragon_shovel": "Dragon Scale Shovel",
-  "item.repurposedend.dragon_axe": "Dragon Scale Axe"
+  "item.repurposedend.dragon_axe": "Dragon Scale Axe",
+  "entity.repurposedend.cryingwither": "Crying Wither",
+  "enchantment.repurposedend.wither_enchantment": "Wither Effect",
+
+  "upgrade.repurposedend.scale_upgrade": "Dragon Scale Upgrade",
+  "item.repurposedend.smithing_scale.applies_to": "Netherite Equipment",
+  "item.repurposedend.smithing_scale.ingredients": "Dragon Scale",
+  "item.repurposedend.smithing_scale.base_slot_description": "Add diamond armor, weapon, or tool",
+  "item.repurposedend.smithing_scale.additions_slot_description": "Add Dragon Scale"
+
+
+
 }

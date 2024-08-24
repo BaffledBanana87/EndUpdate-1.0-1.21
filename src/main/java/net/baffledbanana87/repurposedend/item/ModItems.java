@@ -4,6 +4,7 @@ import net.baffledbanana87.repurposedend.RepurposedEnd;
 import net.baffledbanana87.repurposedend.block.ModBlock;
 import net.baffledbanana87.repurposedend.item.Init.ArmorMaterialInit;
 import net.baffledbanana87.repurposedend.item.Init.ModToolMaterial;
+import net.baffledbanana87.repurposedend.item.custom.SmithingTemplateScale;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
@@ -19,7 +20,7 @@ public class ModItems {
 
     public static final Item DRAGON_SCALE = registerItem("dragon_scale", new Item(new Item.Settings()));
     public static final Item MINI_SCALE = registerItem("mini_scale", new Item(new Item.Settings()));
-    public static final Item DRAGON_UPGRADER = registerItem("dragon_upgrade_smithing_template", new Item(new Item.Settings()));
+    public static final Item DRAGON_UPGRADER = registerItem("dragon_upgrade_smithing_template", SmithingTemplateScale.createScaleUpgrade());
 
     public static final Item DRAGON_SCALE_BOOTS = registerItem("dragon_scale_boots", new ArmorItem(ArmorMaterialInit.DRAGON_SCALE,
             ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
@@ -73,6 +74,7 @@ public class ModItems {
     }
 
 
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(RepurposedEnd.MOD_ID, name), item);
     }
@@ -85,6 +87,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(ModItems::addItemsToBlockGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToArmorGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addItemToTools);
+
     }
 
 }
